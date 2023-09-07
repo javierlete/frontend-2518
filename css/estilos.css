@@ -1,10 +1,68 @@
+:root {
+    --color-tinta: black;
+    --color-fondo: white;
+    --color-fondo-suave: gray;
+    --color-linea: lightgray;
+    --color-enlace: rgb(40, 40, 162);
+    --redondeado: 0.5rem;
+    --hueco-grande: 0.5rem;
+    --hueco-peque: 0.25rem;
+}
+
+* {
+    box-sizing: border-box;
+    
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    background-color: var(--color-fondo);
+    color: var(--color-tinta);
+
+}
+
+main {
+    padding: var(--hueco-grande)
+}
+
+header {
+    background-color: var(--color-tinta);
+    color: var(--color-fondo);
+    text-align: center;
+
+    padding: var(--hueco-grande);
+    
+    & ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    & a {
+        display: inline-block;
+        color: var(--color-fondo);
+        padding: var(--hueco-peque);
+        border-radius: var(--redondeado);
+    }
+
+    & a:hover {
+        background-color: var(--color-fondo);
+        color: var(--color-tinta);
+        text-decoration: none;
+    }
+}
+
+
+h1 {
+    margin-top: 0;
 }
 
 a {
     text-decoration: none;
-    color: rgb(40, 40, 162);
+    color: var(--color-enlace);
     font-weight: bold;;
 }
 
@@ -13,7 +71,7 @@ a:hover {
 }
 
 p {
-    line-height: 1.5rem;
+    line-height: calc(1rem + var(--hueco-grande));
 }
 
 table {
@@ -23,13 +81,13 @@ table {
 }
 
 thead, tfoot {
-    background-color: gray;
-    color: white;
+    background-color: var(--color-fondo-suave);
+    color: var(--color-fondo);
 }
 
 th, td {
-    padding: 0.5rem;
-    border: 1px solid lightgray;
+    padding: var(--hueco-grande);
+    border: 1px solid var(--color-linea);
 }
 
 thead tr:last-of-type th:first-of-type, tbody th, tfoot th:first-of-type {
@@ -38,4 +96,10 @@ thead tr:last-of-type th:first-of-type, tbody th, tfoot th:first-of-type {
 
 thead tr:last-of-type th:not(first-of-type), tbody td, tfoot th:not(:first-of-type) {
     text-align: left;
+}
+
+.tiktok-embed, img, figure, audio, video, iframe {
+    width: 100%;
+
+    border-radius: var(--redondeado);
 }
