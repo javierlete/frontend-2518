@@ -117,6 +117,10 @@ iframe {
     border-radius: var(--redondeado);
 }
 
+figure {
+    margin: 0;
+}
+
 .proporcional {
     position: relative;
     width: 100%;
@@ -204,4 +208,54 @@ button {
         display: flex;
         justify-content: space-between;
     }
+}
+
+@media (min-width: 1024px) {
+    #html {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        & h2 {
+            /* grid-column-start: 1;
+            grid-column-end: 3; */
+            grid-column-end: span 2;
+        }
+
+        #formularios {
+            grid-column-end: span 2;
+        }
+    }
+    
+
+    #multimedia {
+        grid-column-end: span 2;
+
+        display: grid;
+        gap: var(--hueco-grande);
+        grid-template-columns: repeat(2, 1fr);
+
+        & h3 {
+            grid-column-end: span 2;
+        }
+
+        & audio {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+        }
+
+        & a[href^=mailto], a[href^=tel], #mapa {
+            grid-column-start: 1;
+        }
+
+        & #youtube {
+            grid-row-start: 3;
+        }
+
+        & figure {
+            grid-row-start: 6;
+            grid-column-start: 2;
+        }
+    }
+
 }
