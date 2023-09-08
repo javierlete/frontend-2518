@@ -17,9 +17,17 @@ https://javierlete.github.io/frontend-2518/index.html
 * Hoja de reseteo de Eric Meyer: https://meyerweb.com/eric/tools/css/reset/
 * Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 * Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
+
+## Juegos de CSS
+
 * CSS Dinner: https://flukeout.github.io/
 * Flexbox Froggy: https://flexboxfroggy.com/#es
 * Grid Garden: https://cssgridgarden.com/#es
+
+## Recetas
+
+* Menú hamburguesa en CSS pura: https://codepen.io/erikterwan/pen/EVzeRP
+* CSS Garden: https://csszengarden.com/
 
 ## FreeCodeCamp
 
