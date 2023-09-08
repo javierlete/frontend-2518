@@ -11,7 +11,7 @@
 
 * {
     box-sizing: border-box;
-    
+
     margin-left: 0;
     margin-right: 0;
 }
@@ -29,13 +29,14 @@ main {
     padding: var(--hueco-grande)
 }
 
-header, footer {
+header,
+footer {
     background-color: var(--color-tinta);
     color: var(--color-fondo);
     text-align: center;
 
     padding: var(--hueco-grande);
-    
+
     & ul {
         list-style: none;
         padding-left: 0;
@@ -63,7 +64,8 @@ h1 {
 a {
     text-decoration: none;
     color: var(--color-enlace);
-    font-weight: bold;;
+    font-weight: bold;
+    ;
 }
 
 a:hover {
@@ -80,25 +82,36 @@ table {
     border: 1px solid lightgray;
 }
 
-thead, tfoot {
+thead,
+tfoot {
     background-color: var(--color-fondo-suave);
     color: var(--color-fondo);
 }
 
-th, td {
+th,
+td {
     padding: var(--hueco-grande);
     border: 1px solid var(--color-linea);
 }
 
-thead tr:last-of-type th:first-of-type, tbody th, tfoot th:first-of-type {
+thead tr:last-of-type th:first-of-type,
+tbody th,
+tfoot th:first-of-type {
     text-align: right;
 }
 
-thead tr:last-of-type th:not(first-of-type), tbody td, tfoot th:not(:first-of-type) {
+thead tr:last-of-type th:not(first-of-type),
+tbody td,
+tfoot th:not(:first-of-type) {
     text-align: left;
 }
 
-.tiktok-embed, img, figure, audio, video, iframe {
+.tiktok-embed,
+img,
+figure,
+audio,
+video,
+iframe {
     width: 100%;
 
     border-radius: var(--redondeado);
@@ -134,11 +147,61 @@ thead tr:last-of-type th:not(first-of-type), tbody td, tfoot th:not(:first-of-ty
     height: 100%;
 }
 
-fieldset, input, select, textarea, button {
+fieldset,
+input,
+select,
+textarea,
+button {
     border: 1px solid var(--color-linea);
     border-radius: var(--redondeado);
     padding: var(--hueco-grande);
     margin: var(--hueco-grande) 0;
 
     width: 100%;
+}
+
+@media (min-width: 768px) {
+
+    header,
+    footer {
+        text-align: left;
+
+        & ul {
+            display: flex;
+        }
+    }
+
+    form {
+        display: flex;
+        gap: var(--hueco-grande);
+    }
+
+    fieldset div {
+        display: flex;
+        align-items: baseline;
+    }
+
+    label {
+        width: 8rem;
+    }
+
+    fieldset:first-of-type div {
+        display: flex;
+    }
+
+    fieldset:last-of-type {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: var(--hueco-grande);
+
+        & select {
+            width: calc(50% - var(--hueco-grande)/2);
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
 }
