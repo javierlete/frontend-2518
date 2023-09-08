@@ -15,6 +15,7 @@ https://javierlete.github.io/frontend-2518/index.html
 * Especificación oficial del W3C: https://www.w3.org/Style/CSS/current-work
 * Can I Use:  https://caniuse.com
 * Hoja de reseteo de Eric Meyer: https://meyerweb.com/eric/tools/css/reset/
+* Diapositivas HTML5Rocks: https://github.com/html5rocks/slides.html5rocks.com
 * Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 * Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 
