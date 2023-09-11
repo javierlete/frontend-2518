@@ -20,6 +20,7 @@ https://javierlete.github.io/frontend-2518/index.html
 * Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 * Position en MDN: https://developer.mozilla.org/es/docs/Web/CSS/position
 * Tipos de letra de Google: https://fonts.google.com
+* Fontawesome: https://fontawesome.com/
 
 ## Juegos de CSS
 
