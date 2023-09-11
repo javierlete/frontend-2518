@@ -164,6 +164,25 @@ button {
     width: 100%;
 }
 
+aside {
+    text-align: center;
+    background-color: var(--color-fondo-suave);
+    padding: var(--hueco-grande);
+
+    & a {
+        color: var(--color-fondo);
+    }
+
+    & ul {
+        padding-left: 0;
+    }
+
+    & li {
+        padding: var(--hueco-peque);
+        list-style: none;
+    }
+}
+
 @media (min-width: 768px) {
 
     header,
@@ -207,6 +226,10 @@ button {
     footer {
         display: flex;
         justify-content: space-between;
+    }
+
+    aside ul {
+        display: flex;
     }
 }
 
@@ -258,4 +281,120 @@ button {
         }
     }
 
+}
+
+@media (min-width: 1440px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        grid-template-areas: 
+            "titulo titulo"
+            "principal anuncios"
+            "pie pie";
+    }
+
+    body > header {
+        grid-area: titulo;
+    }
+
+    main {
+        grid-area: principal;
+    }
+
+    aside {
+        grid-area: anuncios;
+
+        & ul {
+            flex-direction: column;
+        }
+    }
+
+    footer {
+        grid-area: pie;
+    }
+
+    #html {
+        grid-template-areas:
+            "titulo-html titulo-html"
+            "parrafos formularios"
+            "tablas formularios"
+            "multimedia multimedia";
+        gap: var(--hueco-grande);
+    }
+
+    h2 {
+        grid-area: titulo-html;
+    }
+
+    #parrafos {
+        grid-area: parrafos;
+    }
+
+    #tablas {
+        grid-area: tablas;
+    }
+
+    #multimedia {
+        grid-area: multimedia;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-areas:
+            "titulo-multimedia  titulo-multimedia   titulo-multimedia"
+            "video              imagen              youtube"
+            "soundcloud         audio               tiktok"
+            "soundcloud         enlace-email        tiktok"
+            "soundcloud         enlace-tel          tiktok"
+            "soundcloud         mapa                tiktok"
+            "soundcloud         .                   tiktok";
+
+        & h3 {
+            grid-area: titulo-multimedia;
+        }
+
+        & figure {
+            grid-area: imagen;
+        }
+
+        & audio {
+            grid-area: audio;
+        }
+
+        & video {
+            grid-area: video;
+        }
+
+        & a:first-of-type {
+            grid-area: enlace-email;
+        }
+
+        & a:last-of-type {
+            grid-area: enlace-tel;
+        }
+
+        & #mapa {
+            grid-area: mapa;
+        }
+
+        & #soundcloud {
+            grid-area: soundcloud;
+        }
+        
+        & #youtube {
+            grid-area: youtube;
+        }
+
+        & .tiktok-embed {
+            grid-area: tiktok;
+        }
+    }
+
+    #formularios {
+        grid-area: formularios;
+
+        & form {
+            flex-direction: column;
+        }
+    }
 }
