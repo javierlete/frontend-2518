@@ -19,6 +19,7 @@ https://javierlete.github.io/frontend-2518/index.html
 * Flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 * Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 * Position en MDN: https://developer.mozilla.org/es/docs/Web/CSS/position
+* Tipos de letra de Google: https://fonts.google.com
 
 ## Juegos de CSS
 
