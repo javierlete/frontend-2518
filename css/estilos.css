@@ -183,7 +183,29 @@ aside {
     }
 }
 
+#arriba {
+    position: fixed;
+
+    right: 0;
+    bottom: 0;
+
+    margin: calc(2 * var(--hueco-grande));
+
+    padding: var(--hueco-peque);
+    background-color: var(--color-fondo-suave);
+    color: var(--color-fondo);
+
+    border: 1px solid var(--color-linea);
+    box-shadow: var(--hueco-grande) var(--hueco-grande) var(--hueco-grande) rgba(0, 0, 0, 0.5);
+}
+
 @media (min-width: 768px) {
+    body > header {
+        position: sticky;
+        top: 0;
+
+        z-index: 10;
+    }
 
     header,
     footer {
@@ -230,6 +252,10 @@ aside {
 
     aside ul {
         display: flex;
+    }
+
+    #arriba {
+        display: none;
     }
 }
 
