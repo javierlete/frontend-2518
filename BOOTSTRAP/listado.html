@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administración</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- tr*5>((th>{$})+(td>{Nombre$})+(td>{Apellidos$})+(td>(a.btn.btn-primary.btn-sm[href=formulario.html]>i.bi.bi-pencil-fill)+(a.btn.btn-danger.btn-sm>i.bi.bi-trash-fill))) -->
+            <tr>
+                <th>1</th>
+                <td>Nombre1</td>
+                <td>Apellidos1</td>
+                <td><a href="formulario.html" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a><a href="" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Nombre2</td>
+                <td>Apellidos2</td>
+                <td><a href="formulario.html" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a><a href="" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>Nombre3</td>
+                <td>Apellidos3</td>
+                <td><a href="formulario.html" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a><a href="" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a></td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>Nombre4</td>
+                <td>Apellidos4</td>
+                <td><a href="formulario.html" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a><a href="" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a></td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>Nombre5</td>
+                <td>Apellidos5</td>
+                <td><a href="formulario.html" class="btn btn-primary btn-sm"><i class="bi bi-pencil-fill"></i></a><a href="" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></a></td>
+            </tr>
+            
+        </tbody>
+        <tfoot class="table-dark">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <a href="formulario.html" class="btn btn-sm btn-primary"><i class="bi bi-plus-lg"></i></a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
