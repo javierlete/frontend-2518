@@ -1,0 +1,46 @@
+/* lg */
+
+@media (min-width: 992px) {
+    .ratio, .tiktok-embed {
+        width: calc(50% - (var(--bs-gutter-x) * .5)) !important;
+    }
+}
+
+/* xxl */
+
+@media (min-width: 1400px) {
+    #html {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-areas:
+            "titulo titulo"
+            "parrafos formularios"
+            "tablas formularios"
+            "multimedia multimedia"
+    }
+
+    #html > * {
+        width: 100%;
+    }
+
+    #html h2 {
+        grid-area: titulo;
+    }
+
+    #parrafos {
+        grid-area: parrafos;
+    }
+
+    #tablas {
+        grid-area: tablas;
+    }
+
+    #multimedia {
+        grid-area: multimedia;
+    }
+
+    #formularios {
+        grid-area: formularios;
+    }
+}
