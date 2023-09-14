@@ -28,11 +28,23 @@ https://javierlete.github.io/frontend-2518/index.html
 * Flexbox Froggy: https://flexboxfroggy.com/#es
 * Grid Garden: https://cssgridgarden.com/#es
 
-## Recetas
+## Recetas CSS
 
 * Menú hamburguesa en CSS pura: https://codepen.io/erikterwan/pen/EVzeRP
 * CSS Garden: https://csszengarden.com/
 
+## JavaScript
+
+* Especificación ECMAScript: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
+* Especificación DOM: https://dom.spec.whatwg.org/
+* Especificación Console: https://console.spec.whatwg.org/
+* Especificación Fetch: https://fetch.spec.whatwg.org/
+
 ## FreeCodeCamp
 
 https://www.freecodecamp.org
+
+## Otros
+
+* Comic Google Chrome: https://www.google.com/googlebooks/chrome/?utm_source=thenewstack&utm_medium=website&utm_campaign=platform
+* Comic ContraChrome: https://contrachrome.com/ContraChrome_es.pdf
