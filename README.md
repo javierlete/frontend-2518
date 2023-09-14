@@ -39,6 +39,7 @@ https://javierlete.github.io/frontend-2518/index.html
 * Especificación DOM: https://dom.spec.whatwg.org/
 * Especificación Console: https://console.spec.whatwg.org/
 * Especificación Fetch: https://fetch.spec.whatwg.org/
+* The Modern JavaScript Tutorial: https://javascript.info/
 
 ## FreeCodeCamp
 
