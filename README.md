@@ -41,6 +41,11 @@ https://javierlete.github.io/frontend-2518/index.html
 * Especificación Fetch: https://fetch.spec.whatwg.org/
 * The Modern JavaScript Tutorial: https://javascript.info/
 
+### Memes
+
+* https://www.destroyallsoftware.com/talks/wat
+* https://www.reddit.com/media?url=https%3A%2F%2Fexternal-preview.redd.it%2F1UhkJVkzV9q8VEmWxyRPL8yaR9vo8vusV5xn_n-YZN8.png%3Fs%3D5610cce22f4539f0401be966d3dbecd3b56964b4&rdt=57342
+
 ## FreeCodeCamp
 
 https://www.freecodecamp.org
