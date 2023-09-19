@@ -2,6 +2,8 @@
 
 const URL = 'http://localhost:3000/productos/';
 
+let tabla;
+
 window.addEventListener('DOMContentLoaded', async () => {
     const respuesta = await fetch(URL);
     const productos = await respuesta.json();
@@ -11,6 +13,8 @@ window.addEventListener('DOMContentLoaded', async () => {
     productos.forEach(producto => {
         nuevaLinea(producto);
     });
+
+    asignarDataTables();
 
     document.querySelector('form').addEventListener('submit', async e => {
         e.preventDefault();
@@ -46,12 +50,16 @@ async function guardar() {
     if (respuesta.ok) {
         const producto = await respuesta.json();
 
+        eliminarDataTables();
+
         if (id) {
             modificarLinea(producto);
         }
         else { 
             nuevaLinea(producto); 
         }
+
+        asignarDataTables();
 
         const form = document.querySelector('form');
         
@@ -83,7 +91,7 @@ function modificarLinea(producto) {
 
     tr.querySelector('td:first-of-type').innerText = producto.nombre;
     tr.querySelector('td:nth-of-type(2)').innerText = producto.descripcion;
-    tr.querySelector('td:nth-of-type(3)').innerText = producto.precio;
+    tr.querySelector('td:nth-of-type(3)').innerText = producto.precio + ' €';
 }
 
 async function borrar(id) {
@@ -92,7 +100,11 @@ async function borrar(id) {
     });
 
     if (respuesta.ok) {
+        eliminarDataTables();
+
         document.querySelector(`tr[data-id="${id}"]`).remove();
+        
+        asignarDataTables();
     }
 }
 
@@ -104,4 +116,18 @@ async function editar(id) {
     document.querySelector('#nombre').value = producto.nombre;
     document.querySelector('#descripcion').value = producto.descripcion;
     document.querySelector('#precio').value = producto.precio;
+}
+
+function asignarDataTables() {
+    tabla = new DataTable('table', {
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+        },
+    });
+}
+
+function eliminarDataTables() {
+    if(tabla) {
+        tabla.destroy();
+    }
 }
