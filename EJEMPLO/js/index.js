@@ -1,6 +1,6 @@
 'use strict';
 
-const URL = 'json/productos.json';
+const URL = 'http://localhost:3000/productos/';
 
 window.addEventListener('DOMContentLoaded', async () => {
     const respuesta = await fetch(URL);

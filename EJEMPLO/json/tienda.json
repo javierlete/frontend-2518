@@ -1,0 +1,22 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Monitor 20 pulgadas",
+            "descripcion": "El mejor monitor de 20 pulgadas",
+            "precio": 300
+        },
+        {
+            "id": 2,
+            "nombre": "Televisión 50 pulgadas",
+            "descripcion": "La mejor televisión de 50 pulgadas",
+            "precio": 800
+        },
+        {
+            "id": 3,
+            "nombre": "Tablet",
+            "descripcion": "Tablet de última generación",
+            "precio": 500
+        }
+    ]
+}
