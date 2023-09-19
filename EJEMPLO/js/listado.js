@@ -43,6 +43,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 function nuevaLinea(producto) {
     const tr = document.createElement('tr');
+    tr.dataset.id = producto.id;
 
     tr.innerHTML = `
             <th>${producto.id}</th>
@@ -51,8 +52,18 @@ function nuevaLinea(producto) {
             <td>${producto.precio} €</td>
             <td>
                 <a href="#" class="btn btn-primary btn-sm">Editar</a>
-                <a href="#" class="btn btn-danger btn-sm">Borrar</a>
+                <a href="javascript:borrar(${producto.id})" class="btn btn-danger btn-sm">Borrar</a>
             </td>`;
 
     document.querySelector('tbody').appendChild(tr);
+}
+
+async function borrar(id) {
+    const respuesta = await fetch(`${URL}${id}`, {
+        method: 'DELETE'
+    });
+
+    if(respuesta.ok) {
+        document.querySelector(`tr[data-id="${id}"]`).remove();
+    }
 }
