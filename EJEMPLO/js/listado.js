@@ -15,31 +15,52 @@ window.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('form').addEventListener('submit', async e => {
         e.preventDefault();
 
-        const nombre = document.querySelector('#nombre').value;
-        const descripcion = document.querySelector('#descripcion').value;
-        const precio = document.querySelector('#precio').value;
-
-        const producto = { nombre, descripcion, precio };
-
-        const respuesta = await fetch(URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(producto)
-        });
-
-        if(respuesta.ok) {
-            alert('Producto añadido');
-
-            const producto = await respuesta.json();
-
-            nuevaLinea(producto);
-        } else {
-            alert('No se ha podido añadir');
-        }
+        await guardar();
     });
 });
+
+async function guardar() {
+    const id = document.querySelector('#id').value;
+    const nombre = document.querySelector('#nombre').value;
+    const descripcion = document.querySelector('#descripcion').value;
+    const precio = document.querySelector('#precio').value;
+
+    const producto = { nombre, descripcion, precio };
+
+    let peticion = URL;
+
+    if (id) {
+        producto.id = id;
+
+        peticion += id;
+    }
+
+    const respuesta = await fetch(peticion, {
+        method: id ? 'PUT' : 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(producto)
+    });
+
+    if (respuesta.ok) {
+        const producto = await respuesta.json();
+
+        if (id) {
+            modificarLinea(producto);
+        }
+        else { 
+            nuevaLinea(producto); 
+        }
+
+        const form = document.querySelector('form');
+        
+        form.classList.remove('was-validated');
+        form.reset();
+    } else {
+        alert('No se ha podido guardar');
+    }
+}
 
 function nuevaLinea(producto) {
     const tr = document.createElement('tr');
@@ -51,11 +72,18 @@ function nuevaLinea(producto) {
             <td>${producto.descripcion}</td>
             <td>${producto.precio} €</td>
             <td>
-                <a href="#" class="btn btn-primary btn-sm">Editar</a>
+                <a href="javascript:editar(${producto.id})" class="btn btn-primary btn-sm">Editar</a>
                 <a href="javascript:borrar(${producto.id})" class="btn btn-danger btn-sm">Borrar</a>
             </td>`;
 
     document.querySelector('tbody').appendChild(tr);
+}
+function modificarLinea(producto) {
+    const tr = document.querySelector(`tr[data-id="${producto.id}"]`);
+
+    tr.querySelector('td:first-of-type').innerText = producto.nombre;
+    tr.querySelector('td:nth-of-type(2)').innerText = producto.descripcion;
+    tr.querySelector('td:nth-of-type(3)').innerText = producto.precio;
 }
 
 async function borrar(id) {
@@ -63,7 +91,17 @@ async function borrar(id) {
         method: 'DELETE'
     });
 
-    if(respuesta.ok) {
+    if (respuesta.ok) {
         document.querySelector(`tr[data-id="${id}"]`).remove();
     }
+}
+
+async function editar(id) {
+    const respuesta = await fetch(`${URL}${id}`);
+    const producto = await respuesta.json();
+
+    document.querySelector('#id').value = producto.id;
+    document.querySelector('#nombre').value = producto.nombre;
+    document.querySelector('#descripcion').value = producto.descripcion;
+    document.querySelector('#precio').value = producto.precio;
 }
